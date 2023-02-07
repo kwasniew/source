@@ -38,5 +38,7 @@ jobs:
         run: |
           npm version prerelease --ignore-scripts
           git push origin ${{ github.ref_name }}
+          npm publish
         env:
           CI: true
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

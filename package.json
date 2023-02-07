@@ -1,0 +1,19 @@
+{
+  "name": "sourceapp",
+  "version": "0.0.1-beta.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kwasniew/source.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kwasniew/source/issues"
+  },
+  "homepage": "https://github.com/kwasniew/source#readme",
+  "description": ""
+}

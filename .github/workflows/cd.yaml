@@ -23,7 +23,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          token: ${{ secrets.GH_PUSH_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: setup git config
         run: |
           git config user.name "GitHub Actions Bot"

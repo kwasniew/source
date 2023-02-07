@@ -1,5 +1,8 @@
 name: Continuous version release to npm
 
+permissions:
+  contents: write
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true

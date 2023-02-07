@@ -5,6 +5,9 @@
   "scripts": {
     "test": "echo \"All good\" && exit 0"
   },
+  "dependencies": {
+    "unleash-server": "4.20.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kwasniew/source.git"

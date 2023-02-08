@@ -1,0 +1,21 @@
+name: Continuously sync dependency version
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update-deps:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy Stage
+          uses: actions/github-script@v6
+          with:
+            github-token: ${{ secrets.GH_PUSH_TOKEN }}
+            script: |
+              await github.rest.actions.createWorkflowDispatch({
+              owner: 'kwasniew',
+              repo: 'source',
+              workflow_id: 'continuous_version_sync.yml',
+              ref: 'main'
+          })
+

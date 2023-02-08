@@ -1,4 +1,4 @@
-name: Auto upgrade deps
+name: Continuously sync dependency version
 
 on:
   workflow_dispatch:
@@ -23,11 +23,11 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           registry-url: 'https://registry.npmjs.org'
+          cache: 'yarn'
       - name: update package version
         run: |
           yarn upgrade unleash-server --latest
+          yarn test
           git add .
           git commit -m "chore: auto deps upgrade"
           git push origin ${{ github.ref_name }}
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

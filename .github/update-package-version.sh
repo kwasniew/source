@@ -1,6 +1,6 @@
 #!/bin/bash
 
-yarn upgrade unleash-server --latest
+yarn upgrade $1 --latest
 if git diff-index --quiet HEAD
 then
   echo "No changes present"
@@ -9,5 +9,5 @@ else
   yarn test
   git add .
   git commit -m "chore: auto deps upgrade"
-  git push origin ${{ github.ref_name }}
+  git push origin $2
 fi

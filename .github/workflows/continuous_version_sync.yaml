@@ -25,5 +25,5 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
           cache: 'yarn'
       - name: update package version
-        run: .github/update-package-version.sh
+        run: .github/update-package-version.sh unleash-server ${{ github.ref_name }}
 

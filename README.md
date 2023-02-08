@@ -19,5 +19,4 @@ Test:
 * sync should trigger publish
 * how to trigger sync?
 * publish repo1 -> sync repo2 -> publish repo2
-* 
 

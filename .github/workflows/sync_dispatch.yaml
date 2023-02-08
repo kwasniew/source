@@ -8,8 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger sync
-          uses: actions/github-script@v6
-          with:
+        uses: actions/github-script@v6
+        with:
             github-token: ${{ secrets.GH_PUSH_TOKEN }}
             script: |
               await github.rest.actions.createWorkflowDispatch({

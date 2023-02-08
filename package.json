@@ -1,6 +1,6 @@
 {
   "name": "sourceapp",
-  "version": "0.0.2",
+  "version": "0.0.3-alpha.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"All good\" && exit 0"

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 yarn upgrade $1 --latest
-if git diff-index --quiet HEAD
+if [[ `git diff-index --quiet HEAD` ]]
 then
   echo "No changes present"
 else

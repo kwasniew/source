@@ -13,3 +13,10 @@ Consumer:
 * the version bump may meed to go through the PR with auto approval on success
 * yarn upgrade unleash-server --latest
 
+
+Test:
+* build failure should stop the build
+* sync should trigger publish
+* how to trigger sync?
+* publish repo1 -> sync repo2 -> publish repo2
+

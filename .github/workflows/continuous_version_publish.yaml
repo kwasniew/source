@@ -1,4 +1,4 @@
-name: Continuous beta version release to npm
+name: Continuous publish own version
 
 permissions:
   contents: write
@@ -14,12 +14,12 @@ on:
 
 jobs:
   build:
-    if: ${{ startsWith(github.event.head_commit.message, 'feat:') || startsWith(github.event.head_commit.message, 'fix:') || startsWith(github.event.head_commit.message, 'refactor:') }}
+    if: ${{ startsWith(github.event.head_commit.message, 'feat:') || startsWith(github.event.head_commit.message, 'fix:') || startsWith(github.event.head_commit.message, 'refactor:') }} || startsWith(github.event.head_commit.message, 'chore:') }}
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: [ 14.x ]
 
     steps:
       - uses: actions/checkout@v2

@@ -3,7 +3,8 @@
   "version": "0.0.5-beta.12",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"All good\" && exit 0"
+    "test": "echo \"All good\" && exit 0",
+    "lint": "echo \"All good\" && exit 0"
   },
   "dependencies": {
     "unleash-server": "4.20.4"

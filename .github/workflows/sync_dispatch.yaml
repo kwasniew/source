@@ -13,9 +13,9 @@ jobs:
             github-token: ${{ secrets.GH_PUSH_TOKEN }}
             script: |
               await github.rest.actions.createWorkflowDispatch({
-              owner: 'kwasniew',
-              repo: 'source',
-              workflow_id: 'continuous_version_sync.yml',
-              ref: 'main'
-          })
+                owner: 'kwasniew',
+                repo: 'source',
+                workflow_id: 'continuous_version_sync.yml',
+                ref: 'main'
+              })
 

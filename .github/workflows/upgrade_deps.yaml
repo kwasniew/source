@@ -1,5 +1,8 @@
 name: Auto upgrade deps
 
+on:
+  workflow_dispatch:
+
 permissions:
   contents: write
   pull-requests: write
@@ -8,14 +11,23 @@ jobs:
   update-deps:
     runs-on: ubuntu-latest
     steps:
-      - name: Dependabot metadata
-        id: metadata
-        uses: dependabot/fetch-metadata@v1
+      - uses: actions/checkout@v2
         with:
-          github-token: "${{ secrets.GITHUB_TOKEN }}"
-      - name: Enable auto-merge for Dependabot PRs
-        if: ${{contains(steps.metadata.outputs.dependency-names, 'unleash-server') && steps.metadata.outputs.update-type == 'version-update:semver-patch'}}
-        run: gh pr merge --auto --merge "$PR_URL"
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: setup git config
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          registry-url: 'https://registry.npmjs.org'
+      - name: update package version
+        run: |
+          yarn upgrade unleash-server --latest
+          git add .
+          git commit -m "chore: auto deps upgrade"
+          git push origin ${{ github.ref_name }}
         env:
-          PR_URL: ${{github.event.pull_request.html_url}}
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

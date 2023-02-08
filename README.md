@@ -9,3 +9,4 @@ Findings:
 * branch protection rules prevent version bump (https://github.com/community/community/discussions/13836)
 * the version bump may meed to go through the PR with auto approval on success
 * cd.yaml should check if the current version is alpha and conventional commit is made (fix: or :feat or :refactor)
+

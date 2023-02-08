@@ -36,9 +36,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           registry-url: 'https://registry.npmjs.org'
-          cache: 'yarn'
-      - run: yarn install --frozen-lockfile --ignore-scripts
-      - name: npm version
+      - name: update package version
         run: |
           npm version prerelease --ignore-scripts
           git push origin ${{ github.ref_name }}

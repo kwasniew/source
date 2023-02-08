@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 yarn upgrade $1 --latest
 if [ -n "$(git status --porcelain)" ]; then
   echo "Changes detected"

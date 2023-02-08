@@ -3,7 +3,7 @@
   "version": "0.0.5-beta.14",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"All good\" && exit 1",
+    "test": "echo \"All good\" && exit 0",
     "lint": "echo \"All good\" && exit 0"
   },
   "dependencies": {

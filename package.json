@@ -1,12 +1,12 @@
 {
   "name": "sourceapp",
-  "version": "0.0.4-beta.3",
+  "version": "0.0.5-beta.1",
   "main": "index.js",
   "scripts": {
     "test": "echo \"All good\" && exit 0"
   },
   "dependencies": {
-    "unleash-server": "4.20.4"
+    "unleash-server": "4.20.3"
   },
   "repository": {
     "type": "git",

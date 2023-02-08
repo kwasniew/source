@@ -27,6 +27,7 @@ jobs:
       - name: update package version
         run: |
           yarn upgrade unleash-server --latest
+          ./github/verify-changes-present.sh
           yarn test
           git add .
           git commit -m "chore: auto deps upgrade"

@@ -1,13 +1,13 @@
-name: Continuously sync dependency version
+name: Sync
 
 on:
   workflow_dispatch:
 
 jobs:
-  update-deps:
+  trigger-sync:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy Stage
+      - name: Trigger sync
           uses: actions/github-script@v6
           with:
             github-token: ${{ secrets.GH_PUSH_TOKEN }}

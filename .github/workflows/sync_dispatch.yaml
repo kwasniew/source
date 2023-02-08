@@ -15,7 +15,7 @@ jobs:
               await github.rest.actions.createWorkflowDispatch({
                 owner: 'kwasniew',
                 repo: 'source',
-                workflow_id: 'continuous_version_sync.yml',
+                workflow_id: 'Continuously sync dependency version',
                 ref: 'main'
               })
 

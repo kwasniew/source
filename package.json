@@ -7,7 +7,7 @@
     "lint": "echo \"All good\" && exit 0"
   },
   "dependencies": {
-    "unleash-server": "4.20.5"
+    "unleash-server": "4.22.0"
   },
   "repository": {
     "type": "git",
